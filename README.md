@@ -1,33 +1,31 @@
 # Tarifa PT (Home Assistant)
 
-Integração simples para expor 5 sensores com base nos períodos horários da **ERSE (Portugal Continental)**:
+Exponha 5 sensores com base nos períodos horários da **ERSE (Portugal Continental)**.
 
-- `tarrif-now` (string): período atual
+- `tarrif-now` (string): período atual (`vazio`, `fora_vazio`, `cheias`, `ponta`)
 - `next-tarrif` (string): próximo período
 - `tarrif-now-elapsed` (min): minutos decorridos
-- `tarrif-now-remaing` (min): minutos restantes
-- `next-tarrif-durantion` (min): duração total do próximo período
+- `tarrif-now-remaing` (min): minutos restantes até mudança
+- `next-tarrif-durantion` (min): duração do próximo período
 
 ## Modos suportados
-- `bi_semanal`
-- `bi_diario`
-- `tri_diario`
+- `bi_semanal` (bi-horária semanal)
+- `bi_diario` (bi-horária diária: vazio 22:00–08:00)
+- `tri_diario` (tri-horária diária: verão/inverno)
 
-## Instalação
-1. Copiar `custom_components/tarifa_pt` para `config/custom_components`.
+## Instalação manual
+1. Copiar `custom_components/tarifa_pt` para `config/custom_components/`.
 2. Reiniciar o Home Assistant.
 3. Em `configuration.yaml`:
 ```yaml
 sensor:
   - platform: tarifa_pt
-    mode: bi_semanal
+    mode: bi_semanal   # ou: bi_diario | tri_diario
 ```
 4. Reiniciar novamente.
 
-## Via HACS
-1. HACS → Integrations → Custom repositories
-2. Adicionar `https://github.com/SkywalkerPTE419/ha-tarifa-pt` como **Integration**
-3. Instalar e reiniciar HA
-
----
-by @SkywalkerPTE419
+## Via HACS (Custom Repository)
+- HACS → Integrations → ⋯ → **Custom repositories**
+- Repository: `https://github.com/SkywalkerPTE419/ha-tarifa-pt`
+- Category: **Integration**
+- Instalar e reiniciar.
