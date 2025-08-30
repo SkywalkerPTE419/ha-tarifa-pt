@@ -1,0 +1,8 @@
+{
+  "domain": "tarifa_pt",
+  "name": "Tarifa PT",
+  "version": "0.1.0",
+  "documentation": "https://github.com/SkywalkerPTE419/ha-tarifa-pt",
+  "requirements": ["pytz>=2023.3"],
+  "codeowners": ["@SkywalkerPTE419"]
+}

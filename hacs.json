@@ -1,0 +1,5 @@
+{
+  "name": "Tarifa PT (Bi-semanal, Bi-diário, Tri-diário)",
+  "render_readme": true,
+  "domains": ["sensor"]
+}
